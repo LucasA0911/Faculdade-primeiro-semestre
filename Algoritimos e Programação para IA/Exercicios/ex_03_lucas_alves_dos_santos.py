@@ -2,7 +2,7 @@ print("--------------------------------------------------------------")
 print("Questão 01")
 print("--------------------------------------------------------------")
 
-def escreva_ola():
+def escreve_ola():
     print("Olá exercicio 3")
 #-----------------------------------------
 
@@ -35,29 +35,33 @@ print("--------------------------------------------------------------")
 print("Questão 03")
 print("--------------------------------------------------------------")
 
-def soma(a:int,b:int):
+def soma(a,b):
     return f"O resultado da soma é: {a+b}"
+for i in range(2):
+    a = float(input("Digite o primeiro número da soma: "))
+    b = float(input("Digite o segundo número da soma: "))
+    print(soma(a,b))
 
-print(soma(10,5))
-print(soma(15,5))
-
-def subtracao(a:int,b:int):
+def subtracao(a,b):
     return f"O resultado da subtração é: {a-b}"
+for i in range(2):
+    a = float(input("Digite o primeiro número da subtração: "))
+    b = float(input("Digite o segundo número da subtração: "))
+    print(subtracao(a,b))
 
-print(subtracao(20,5))
-print(subtracao(15,5))
-
-def multiplicacao(a:int,b:int):
+def multiplicacao(a,b):
     return f"O resultado da multiplicação é: {a*b}"
+for i in range(2):
+    a = float(input("Digite o primeiro número da multiplicação: "))
+    b = float(input("Digite o segundo número da multiplicação: "))
+    print(multiplicacao(a,b))
 
-print(multiplicacao(10,5))
-print(multiplicacao(10,10))
-
-def divisao(a:int,b:int):
+def divisao(a,b):
     return f"O resultado da divisão é: {a/b}"
-
-print(divisao(10,5))
-print(divisao(25,5))
+for i in range(2):
+    a = float(input("Digite o primeiro número da divisão: "))
+    b = float(input("Digite o segundo número da divisão: "))
+    print(divisao(a,b))
 #--------------------------------------------------------------
 
 print("--------------------------------------------------------------")
@@ -65,10 +69,7 @@ print("Questão 04")
 print("--------------------------------------------------------------")
 
 def validar_usuario(nome:str,idade:int):  
-    if len(nome) > 3 and  18 <= idade <= 100:
-       return True
-    else: 
-        return False
+     return len(nome) >= 3 and  18 <= idade <= 100
 
 print(validar_usuario("Lucas",26))
 print(validar_usuario("Art", 100))
@@ -151,14 +152,75 @@ print("--------------------------------------------------------------")
 print("Questão 09")
 print("--------------------------------------------------------------")
 
-def celsius_para_fahrenheit(celsius):
+def celsius_para_fahrenheit(celsius:int):
     return f"{(celsius * 9/5) + 32:.2f}Fº"
 
-def fahrenheit_para_celsius(fahrenheit):
-    return f"{(fahrenheit -32) * 5/9:.2f}Fº"
+def fahrenheit_para_celsius(fahrenheit:int):
+    return f"{(fahrenheit -32) * 5/9:.2f}Cº"
 
-celsius = int(input("Insira a temperatura em Cº: "))
-fahrenheit = int(input("Insira a temperatura em Fº: "))
-
+celsius = float(input("Digite a temperatura em Cº: "))
+fahrenheit = float(input("Digite a temperatura em Fº: "))
 print(celsius_para_fahrenheit(celsius))
 print(fahrenheit_para_celsius(fahrenheit))
+
+print("--------------------------------------------------------------")
+print("Questão 10")
+print("--------------------------------------------------------------")
+
+viagem = ("Rio de Janeiro", 5, "ônibus", 850.00)
+
+cidade_destino, dias, transporte, valor = viagem
+
+print(viagem)
+print(f"A quantidade de elementos na tupla é de: {len(viagem)}")
+print("ônibus" in viagem)
+
+viagem_nova = viagem + ("Hotel",)
+
+cidade_destino, dias, transporte, valor, hospedagem = viagem_nova
+
+print(viagem_nova)
+
+print("--------------------------------------------------------------")
+print("Questão 11")
+print("--------------------------------------------------------------")
+
+def produto(nome:str, categoria:str, preco:float,qtd_estoque:int, codigo_produto:int):
+    item = {
+        "nome":nome,
+        "categoria":categoria,
+        "preco":preco,
+        "qtd_estoque":qtd_estoque,
+        "codigo_produto":codigo_produto,
+        "valor_estoque":preco*qtd_estoque
+    }
+    return item
+nome = input("Digite o nome do produto: ")
+categoria = input("Digite a categoria do produto: ")
+preco = float(input("Digite o preço do produto no estilo XX.XX: "))
+qtd_estoque = int(input("Digite a quatidade do produto: "))
+codigo_produto = int(input("Digite o código do produto: "))
+
+produto = produto(nome,categoria,preco,qtd_estoque,codigo_produto)
+print(produto)
+print(produto["nome"])
+print(produto["categoria"])
+print(produto["preco"])
+print(produto["qtd_estoque"])
+print(produto["codigo_produto"])
+print(produto["valor_estoque"])
+
+print("--------------------------------------------------------------")
+print("Questão 12")
+print("--------------------------------------------------------------")
+
+def area_circulo(diametro:float):
+    area = 3.14 * pow(raio_circulo(diametro),2)
+    return area
+
+def raio_circulo(diametro:float):
+    raio = diametro/2
+    return raio
+
+print(f"{area_circulo(30)}cm²")
+print(f"{area_circulo(50)}cm²")

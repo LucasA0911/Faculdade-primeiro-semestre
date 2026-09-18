@@ -88,5 +88,34 @@
         </form>
     </div>
 
+    <script>
+        document.querySelector('form').addEventListener('submit', function (e) {
+          e.preventDefault();
+          
+          const dados = {
+            nome: document.querySelector('#nome')?.value,
+            email: document.querySelector('#email')?.value,
+            senha: document.querySelector('#senha')?.value // Incluído o campo senha
+          };
+
+          fetch('https://lucasa0911.app.n8n.cloud/webhook/cadastro-faculdade', {
+            method: 'POST',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify(dados)
+          })
+          .then(response => {
+              if (response.ok) {
+                  alert('Cadastro realizado com sucesso!');
+                  document.querySelector('form').reset(); // Limpa o formulário após o sucesso
+              } else {
+                  alert('Ocorreu um erro ao realizar o cadastro.');
+              }
+          })
+          .catch(error => {
+              console.error('Erro:', error);
+              alert('Erro de conexão com o servidor.');
+          });
+        });
+    </script>
 </body>
 </html>

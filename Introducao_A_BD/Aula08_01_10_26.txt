@@ -1,0 +1,10 @@
+# Bom dia
+
+Servidor -> DataBase -> Schema -> Tabelas
+                          /\
+                       Org  Setor
+
+Distinção entre Null e empty
+
+Null não tem espaço na memória para armazenar algo
+empty tem espaço na memória porém está vazio

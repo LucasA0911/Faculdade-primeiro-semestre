@@ -1,6 +1,6 @@
 # Bom dia
 
-Servidor -> DataBase -> Schema -> Tabelas
+Servidor -> DataBase -> Schema -> Tabelas -> Atributos -> Dados
                           /\
                        Org  Setor
 
@@ -8,3 +8,13 @@ Distinção entre Null e empty
 
 Null não tem espaço na memória para armazenar algo
 empty tem espaço na memória porém está vazio
+
+No CSV ocorrem muitas duplicatas
+No JSON não existe duplicidade de informações
+
+
+Algebra é um recurso matematico que nos permite escrever expressões matematicas ex: 1+1 = 2
+
+Na algebra relacional o resultado precisa ser um conjunto
+
+uma igualdade sempre vai ser um subconjunto de um pertencimento

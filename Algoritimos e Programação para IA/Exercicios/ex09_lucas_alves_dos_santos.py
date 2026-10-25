@@ -65,13 +65,11 @@ def requer_admin(funcao):
     def envelope(*args,**kwargs):
         usuario = args[0] if args else kwargs.get("usuario")
         if usuario and usuario.get("funcao") == "admin":
-            print(f"""Usuário: {usuario.get("nome")}
-Função: {usuario.get("funcao")}""")
+            print(f"Usuário: {usuario.get("nome")} \n Função: {usuario.get("funcao")}")
             print("Acesso autorizado")
             return funcao(*args,**kwargs)
         else:
-            print(f"""Usuário: {usuario.get("nome")}
-Função: {usuario.get("funcao")}""")
+            print(f"Usuário: {usuario.get("nome")}\nFunção: {usuario.get("funcao")}")
             print("Acesso negado")
     return envelope
 
